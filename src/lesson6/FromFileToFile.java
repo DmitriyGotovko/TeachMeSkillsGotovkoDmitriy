@@ -29,7 +29,7 @@ public class FromFileToFile {
         numbersInt[3] *= 10;
         numbersInt[4] *= 10;
 
-        File toFile = new File("testTo");
+        File toFile = new File("fileTwo");
         PrintWriter filing = new PrintWriter(toFile);
         for (int value : numbersInt) {
             String Line = Arrays.toString(new int[]{value});
