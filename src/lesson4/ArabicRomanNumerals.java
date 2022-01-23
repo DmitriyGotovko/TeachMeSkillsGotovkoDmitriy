@@ -11,36 +11,62 @@ import java.util.Scanner;
 
 public class ArabicRomanNumerals {
     public static void main(String[] args) {
-        Map<Integer,Character> arabicRoman = new HashMap<>();
-        arabicRoman.put(1,'I');
-        arabicRoman.put(5,'V');
-        arabicRoman.put(10,'X');
-        arabicRoman.put(50,'L');
-        arabicRoman.put(100,'C');
+        Map<Integer,String> arabicRoman = new HashMap<>();
+        arabicRoman.put(0, "0");
+        arabicRoman.put(1,"I");
+        arabicRoman.put(5,"V");
+        arabicRoman.put(10,"X");
+        arabicRoman.put(50,"L");
+        arabicRoman.put(100,"C");
 
-        Character numberOne = arabicRoman.get(1);
-        Character numberFive = arabicRoman.get(5);
-        Character numberTen = arabicRoman.get(10);
-        Character numberFifty = arabicRoman.get(50);
-        Character numberOneHundred = arabicRoman.get(100);
+        StringBuilder romeNumber = new StringBuilder();
 
-
-        Scanner conversion = new Scanner(System.in);
-        System.out.println("Введите число от 1, 5, 10, 50 или 100");
-        int arabicNumber = conversion.nextInt();
-        if (arabicNumber == 1) {
-            System.out.println(numberOne);
-        }else if(arabicNumber == 5){
-            System.out.println(numberFive);
-        }else if(arabicNumber == 10){
-            System.out.println(numberTen);
-        }else if(arabicNumber == 50){
-            System.out.println(numberFifty);
-        }else if(arabicNumber == 100){
-            System.out.println(numberOneHundred);
-        }else{
-            System.out.println("Ведите другое число!");
+        Scanner converter = new Scanner(System.in);
+        System.out.println("Введите число");
+        int arabicNumber = converter.nextInt();
+        if (arabicNumber == 0){
+            romeNumber.append(arabicRoman.get(0));
         }
-
+        while (arabicNumber >= 100){
+            romeNumber.append(arabicRoman.get(100));
+            arabicNumber -= 100;
+        }
+        while (arabicNumber >= 90){
+            romeNumber.append(arabicRoman.get(10));
+            romeNumber.append(arabicRoman.get(100));
+            arabicNumber -= 90;
+        }
+        while (arabicNumber >= 50){
+            romeNumber.append(arabicRoman.get(50));
+            arabicNumber -= 50;
+        }
+        while (arabicNumber >= 40){
+            romeNumber.append(arabicRoman.get(10));
+            romeNumber.append(arabicRoman.get(50));
+            arabicNumber -= 40;
+        }
+        while (arabicNumber >= 10){
+            romeNumber.append(arabicRoman.get(10));
+            arabicNumber -= 10;
+        }
+        while (arabicNumber >= 9){
+            romeNumber.append(arabicRoman.get(1));
+            romeNumber.append(arabicRoman.get(10));
+            arabicNumber -= 9;
+        }
+        while (arabicNumber >= 5){
+            romeNumber.append(arabicRoman.get(5));
+            arabicNumber -= 5;
+        }
+        while (arabicNumber >= 4){
+            romeNumber.append(arabicRoman.get(1));
+            romeNumber.append(arabicRoman.get(5));
+            arabicNumber -= 5;
+        }
+        while (arabicNumber >= 1){
+            romeNumber.append(arabicRoman.get(1));
+            arabicNumber -= 1;
+        }
+        System.out.println("Римское: " + romeNumber);
     }
 }
