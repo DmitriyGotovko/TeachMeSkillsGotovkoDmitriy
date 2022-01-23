@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class FromFileToFile {
     public static void main(String[] args) throws FileNotFoundException {
 
-        File fromFile = new File("testFrom");
+        File fromFile = new File("fileOne");
         Scanner readFromFile = new Scanner(fromFile);
         String line = readFromFile.nextLine();
         String[] numbersString = line.split(" ");
