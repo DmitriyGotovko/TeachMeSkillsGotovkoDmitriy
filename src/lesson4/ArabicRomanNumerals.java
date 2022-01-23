@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class ArabicRomanNumerals {
     public static void main(String[] args) {
+
         Map<Integer,String> arabicRoman = new HashMap<>();
         arabicRoman.put(0, "0");
         arabicRoman.put(1,"I");
@@ -21,9 +22,13 @@ public class ArabicRomanNumerals {
 
         StringBuilder romeNumber = new StringBuilder();
 
-        Scanner converter = new Scanner(System.in);
-        System.out.println("Введите число");
-        int arabicNumber = converter.nextInt();
+        Scanner converterArabicToRoman = new Scanner(System.in);
+        System.out.println("Введите число от 0 до 499");
+        int arabicNumber = converterArabicToRoman.nextInt();
+        if (arabicNumber >= 500){
+            System.out.println("Введите число согласно диапазона");
+            return;
+        }
         if (arabicNumber == 0){
             romeNumber.append(arabicRoman.get(0));
         }
