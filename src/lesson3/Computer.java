@@ -56,8 +56,9 @@ public class Computer {
     public int hashCode() {
         return Objects.hash(cpu, hdd, ram, type, cost, brand, model, maxWorkingCount);
     }
+}
 
-    public void turnOn(){
+  /**  public void turnOn(){
 
         //random
         System.out.println("Для включения компьютера нажмите 0 или 1");
@@ -74,3 +75,4 @@ public class Computer {
 
     }
 }
+*/
