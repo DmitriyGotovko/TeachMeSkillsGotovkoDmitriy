@@ -1,5 +1,6 @@
 package lesson3;
 
+
 public class CPU {
 
     int clockFrequency;

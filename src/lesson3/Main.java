@@ -40,8 +40,8 @@ public class Main {
 
         System.out.println(dellComputer);
 
-        int codeOne = (int) (Math.random() * 2);
-        int codeTwo = (int) (Math.random() * 2);
+        int codeOneDell = (int) (Math.random() * 2);
+        int codeTwoDell = (int) (Math.random() * 2);
 
         if (dellHDD != null) {
             System.out.println("Чтобы включить компьютер нажмите 0 или 1");
@@ -50,7 +50,7 @@ public class Main {
         }
         Scanner dellScan = new Scanner(System.in);
         int codeOnn = dellScan.nextInt();
-        if (codeOnn == codeOne) {
+        if (codeOnn == codeOneDell) {
             System.out.println("Угадал! Ты везунчик! Компьютер включен.");
         } else {
             System.out.println("Не угадал! Компьютер СГОРЕЛ");
@@ -58,7 +58,7 @@ public class Main {
         }
         System.out.println("Чтобы выключить компьютер нажмите 0 или 1");
         int codeOff = dellScan.nextInt();
-            if (codeOff == codeTwo){
+            if (codeOff == codeTwoDell){
                 System.out.println("Пока! Компьютер выключен.");
             } else {
                 System.out.println("Не угадал! Компьютер СГОРЕЛ");
